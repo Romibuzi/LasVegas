@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="V71-NL-ANO">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--List Lots Table View Controller - Liste des lots-->
+        <scene sceneID="Iag-B6-G9I">
+            <objects>
+                <tableViewController id="eXh-cf-8Fk" customClass="ListLotsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZrO-Gr-Rb2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="LotCell" textLabel="bX4-tn-Eda" detailTextLabel="R64-Il-VKa" style="IBUITableViewCellStyleSubtitle" id="fZb-Q6-5yu">
+                                <rect key="frame" x="0.0" y="22" width="320" height="78"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="77"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX4-tn-Eda">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R64-Il-VKa">
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="wMp-kv-nEh" kind="push" identifier="showLotDetails" id="HgV-fr-kWP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eXh-cf-8Fk" id="xr1-Xf-tWz"/>
+                            <outlet property="delegate" destination="eXh-cf-8Fk" id="o3B-my-K90"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Liste des lots" id="K1F-rg-uN5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVb-OC-MVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776" y="89"/>
+        </scene>
+        <!--Lot Details View Controller-->
+        <scene sceneID="gQO-DR-ZSc">
+            <objects>
+                <viewController id="wMp-kv-nEh" customClass="LotDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7YV-Ao-Iy0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMX-vc-r5M">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Tente ta chance !">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tenteTaChanceBtn:" destination="wMp-kv-nEh" eventType="touchUpInside" id="3Jn-El-9UV"/>
+                                    <segue destination="ft5-NI-vqq" kind="modal" id="9UH-Mt-aou"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lne-6n-TmG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="147" id="xPP-yP-HWt"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lha-sr-zXi">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="lYQ-04-zBA"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lha-sr-zXi" firstAttribute="trailing" secondItem="7YV-Ao-Iy0" secondAttribute="trailing" type="default" id="3jw-i9-LHn"/>
+                            <constraint firstItem="LMX-vc-r5M" firstAttribute="centerX" secondItem="lha-sr-zXi" secondAttribute="centerX" type="default" id="DTj-hF-z4W"/>
+                            <constraint firstItem="Lne-6n-TmG" firstAttribute="leading" secondItem="7YV-Ao-Iy0" secondAttribute="leading" type="default" id="VAO-Xc-RqD"/>
+                            <constraint firstAttribute="bottom" secondItem="LMX-vc-r5M" secondAttribute="bottom" constant="45" id="XfS-FY-Gw4"/>
+                            <constraint firstItem="lha-sr-zXi" firstAttribute="leading" secondItem="7YV-Ao-Iy0" secondAttribute="leading" type="default" id="Zf8-Op-Buz"/>
+                            <constraint firstItem="Lne-6n-TmG" firstAttribute="trailing" secondItem="7YV-Ao-Iy0" secondAttribute="trailing" type="default" id="ieG-Kd-ExK"/>
+                            <constraint firstItem="Lne-6n-TmG" firstAttribute="top" secondItem="7YV-Ao-Iy0" secondAttribute="top" type="default" id="opZ-Na-upc"/>
+                            <constraint firstItem="lha-sr-zXi" firstAttribute="top" secondItem="7YV-Ao-Iy0" secondAttribute="top" constant="148" id="uIP-hR-FUy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lv2-YV-amI"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="largeDescriptionText" destination="lha-sr-zXi" id="4yg-H3-eMe"/>
+                        <outlet property="largeImageView" destination="Lne-6n-TmG" id="3Eh-9F-DYy"/>
+                        <outlet property="tenteTaChanceBtn" destination="LMX-vc-r5M" id="NhB-M1-ReS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Qh-4w-KQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1349" y="89"/>
+        </scene>
+        <!--Roulette View Controller-->
+        <scene sceneID="OfV-sy-hbZ">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="ft5-NI-vqq" customClass="RouletteViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EEh-B8-gva">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2l2-UA-j3d">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Retour">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="retourBtn:" destination="ft5-NI-vqq" eventType="touchUpInside" id="ybd-uX-sHo"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1e-zC-UXH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="ejN-2K-7dv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="ft5-NI-vqq" id="8uJ-Cc-fyV"/>
+                                    <outlet property="delegate" destination="ft5-NI-vqq" id="s2l-Of-jEK"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKm-oB-0jL">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Lance la roulette">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="LaunchRoulette:" destination="ft5-NI-vqq" eventType="touchUpInside" id="18x-dn-Juq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O1e-zC-UXH" firstAttribute="top" secondItem="EEh-B8-gva" secondAttribute="top" type="default" id="Bsh-P8-pHA"/>
+                            <constraint firstItem="2l2-UA-j3d" firstAttribute="leading" secondItem="EEh-B8-gva" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OH3-Um-aIe"/>
+                            <constraint firstItem="O1e-zC-UXH" firstAttribute="leading" secondItem="EEh-B8-gva" secondAttribute="leading" type="default" id="PjO-da-afV"/>
+                            <constraint firstItem="oKm-oB-0jL" firstAttribute="centerX" secondItem="O1e-zC-UXH" secondAttribute="centerX" type="default" id="YVS-an-aIh"/>
+                            <constraint firstAttribute="bottom" secondItem="2l2-UA-j3d" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ctl-XI-ITy"/>
+                            <constraint firstAttribute="bottom" secondItem="oKm-oB-0jL" secondAttribute="bottom" constant="163" id="fKt-Tg-sJZ"/>
+                            <constraint firstItem="O1e-zC-UXH" firstAttribute="trailing" secondItem="EEh-B8-gva" secondAttribute="trailing" type="default" id="waX-I6-Zky"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="LaunchRouletteButton" destination="oKm-oB-0jL" id="R0t-Ou-hvu"/>
+                        <outlet property="PickerView" destination="O1e-zC-UXH" id="MQq-EH-KEd"/>
+                        <outlet property="retourBtn" destination="2l2-UA-j3d" id="l3J-F4-hO5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kjr-qx-WyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="89"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="874-ql-pC8">
+            <objects>
+                <navigationController id="V71-NL-ANO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NZT-fY-uKl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eXh-cf-8Fk" kind="relationship" relationship="rootViewController" id="ydn-fL-3yW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZa-5a-IJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="89"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="ListLotsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListLotsTableViewController.h"/>
+        </class>
+        <class className="LotDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LotDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tenteTaChanceBtn:"/>
+                <relationship kind="outlet" name="largeDescriptionText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="largeImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tenteTaChanceBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RouletteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RouletteViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LaunchRoulette:"/>
+                <relationship kind="action" name="retourBtn:"/>
+                <relationship kind="outlet" name="LaunchRouletteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="PickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="retourBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
